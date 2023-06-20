@@ -32,32 +32,27 @@ public class WordOccurrencesGUI extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Word Occurrences");
 
-        // Text area for displaying the file content
+        
         textArea = new TextArea();
         textArea.setEditable(false);
 
-        // List view for displaying the word frequencies
+       
         listView = new ListView<>();
 
-        // Open file button
         Button openFileButton = new Button("Open File");
         openFileButton.setOnAction(e -> openFile());
 
-        // Analyze button
         Button analyzeButton = new Button("Analyze");
         analyzeButton.setOnAction(e -> analyzeText());
 
-        // Create the top pane with buttons
         VBox buttonPane = new VBox(10, openFileButton, analyzeButton);
         buttonPane.setPadding(new Insets(10));
 
-        // Create the main layout pane
         BorderPane layout = new BorderPane();
         layout.setTop(buttonPane);
         layout.setLeft(textArea);
         layout.setRight(listView);
 
-        // Create the scene
         Scene scene = new Scene(layout, 800, 600);
 
         // Set the scene and show the stage
